@@ -21,10 +21,28 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = (daftarBelanja) => {
+  const daftarItem = [];  // Array item belanjaan
+
+  for (let index = 0; index < daftarBelanja.length; index++) {
+    // Menambahkan item ke array dalam bentuk string menggunakan template literal
+    daftarItem.push(`- ${daftarBelanja[index].nama} x ${daftarBelanja[index].kuantitas}`);
+  }
+
+  return daftarItem; // Return list item belanjaan
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (daftarBelanja) => {
+  let totalHargaBelanjaan = 0; // Total harga belanjaan
+
+  for (let index = 0; index < daftarBelanja.length; index++) {
+    // Operasi penjumlahan total harga belanjaan
+    totalHargaBelanjaan = totalHargaBelanjaan + (daftarBelanja[index].harga * daftarBelanja[index].kuantitas)    
+  }
+
+  return totalHargaBelanjaan; // Return nilai total harga belanjaan
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
